@@ -1,6 +1,6 @@
 import React from 'react';
 import './assets/css/stats.css' ;
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 interface StatsProps {
     count: number
@@ -9,7 +9,7 @@ interface StatsProps {
 const StatsPosts = ({ count }: StatsProps) => (
    <div className='stats'>
         <div className='statsCircle-posts'>
-            <i className="fa fa-comment" aria-hidden="true"></i>  
+            <i className="fa fa-comment" aria-hidden="true"> </i>
         </div>
         <span className='stats-post-count'>{ count }</span>
         <span className='stats-name'>Posts</span>
@@ -19,7 +19,7 @@ const StatsPosts = ({ count }: StatsProps) => (
 const StatsFollower = ({ count }: StatsProps) => (
     <div className='stats'>
         <div className='statsCircle-followers'>
-        <i className="fa fa-hospital-o" aria-hidden="true"></i>
+        <i className="fa fa-hospital-o" aria-hidden="true"> </i>
         </div>
         <span className='stats-follower-count'>{ count }</span>
         <span className='stats-name'>Follower</span>
@@ -29,7 +29,7 @@ const StatsFollower = ({ count }: StatsProps) => (
 const StatsLikes = ({ count }: StatsProps) => (
     <div className='stats'>
         <div className='statsCircle-likes'>
-        <i className="fab fa-heart-o" aria-hidden="true"></i>
+        <i className="fab fa-heart-o" aria-hidden="true"> </i>
         </div>
         <span className='stats-like-count'>{ count }</span>
         <span className='stats-name'>Likes</span>
@@ -60,9 +60,9 @@ const StatsBody = ({ likes, posts, followers }: MainStatsProps) => {
 
 const mapStateToProps = (state: any) => {
      return {
-        likes: 100,
-        posts: 23,
-        followers: 2
+        likes: 0,
+        posts: state.Inbox.askPosts.posts.length,
+        followers: 0
      }
 };
 

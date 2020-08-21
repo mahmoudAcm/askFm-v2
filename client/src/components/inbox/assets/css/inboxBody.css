@@ -1,0 +1,17 @@
+.inbox {
+    margin-top: 60px;
+}
+
+.askPost-item-footer {
+    margin-top: 10px;
+}
+
+.askPost-item-footer .date {
+    float: left;
+    margin-top: 10px;
+    color: gray;
+}
+
+.askPost-item-footer .answer {
+    float: right;
+}
