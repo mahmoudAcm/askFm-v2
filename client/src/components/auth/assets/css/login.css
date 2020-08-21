@@ -1,0 +1,42 @@
+.Login {
+    bottom: 0;
+    color: #fff;
+    left: 0;
+    min-height: 750px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 320px;
+    background-size: cover;
+    background: url(https://d1muxuiltlupn6.cloudfront.net/assets/welcome-bg-7c2a2566bb8688c57b14af5cb2af8b25d69d8911c8c0c12188eb6878cbb169f9.jpg) no-repeat center center;
+    min-height: 680px;
+}
+
+h2 {
+    color: var(--second);
+}
+
+.Login-form {
+    width: 300px;
+    text-align: center;
+}
+
+.login-btn {
+    background: none;
+    border: 1px solid white;
+    color: white;
+}
+
+.close-loginPopUp {
+    float: right;
+}
+
+.login-form {
+    width: 300px;
+}
+
+.login-form .form-login-btn {
+    float: right;
+    margin-top: 15px;
+    width: 100px;
+}

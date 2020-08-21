@@ -1,0 +1,68 @@
+.stats {
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+}
+
+.stats-name {
+    color: gray;
+    font-size: 12px;
+    margin: 5px 0 5px 0;
+    font-weight: bold;
+}
+
+.statsCircle-posts {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color:white;
+    font-size: 18px;
+    background: #00aab8; 
+}
+
+
+.stats-post-count {
+    color: white;
+    font-size: 19px;
+    /* margin: 10px 0 5px 0; */
+}
+
+.stats-like-count {
+    color: white;
+    font-size: 19px;
+    /* margin: 10px 0 5px 0; */
+}
+
+.stats-follower-count {
+    color: white;
+    font-size: 19px;
+    /* margin: 10px 0 5px 0; */
+}
+
+.statsCircle-likes {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color:white;
+    font-size: 18px;
+    background: #ee1144;
+}
+
+
+.statsCircle-followers {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color:white;
+    font-size: 18px;
+    background: #784589;
+}

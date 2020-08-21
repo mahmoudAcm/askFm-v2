@@ -1,0 +1,61 @@
+header {
+    height: 45px;
+    border-bottom: 1px solid #252b2f;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: var(--first);
+}
+
+.container {
+    width: 850px;
+}
+
+.brand {
+    color:var(--second);
+    font-size: 22px;
+    vertical-align: top
+}
+
+.navbar-nav a {
+    color: gray;
+}
+
+.navbar-nav li > :hover:not(.wallet):not(.activity){
+    color:var(--second) !important;
+    cursor: pointer;
+}
+
+.wallet {
+    width: 70px;
+    height: 25px;
+    background-color: #929698;
+    cursor: pointer;
+}
+
+.rounded-wallet{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.nav-item-color{
+    color:#929698;
+    font-size: 19px;
+}
+
+.activity{
+    width: 40px;
+    height: 25px;
+    color:white;
+    background-color: var(--second);
+    text-align: center;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.bg-first {
+    background-color:var(--first);
+}
+
+.notification{
+    bottom: -4px;
+    right: 4px;
+}

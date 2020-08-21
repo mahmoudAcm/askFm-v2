@@ -1,0 +1,11 @@
+.register-from-main {
+    background: white;
+    width: 400px;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 20px;
+}
+
+.register-from {
+    width: 300px;
+}

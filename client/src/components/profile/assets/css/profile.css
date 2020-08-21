@@ -1,0 +1,122 @@
+.profile-background {
+    width: 100%;
+    min-height: 400px;
+    max-height: 400px;
+    overflow: hidden;
+    background-color: #ee1144;
+    position: fixed;
+    z-index: -10;
+    
+}
+
+
+.profile-background img{
+    width: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.profile-background .gradient{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 30%, #2b3237);
+}
+
+.profile-body{
+   padding-top:100px;
+}
+
+
+.profile-user img{
+    width: 90px;
+    height: 90px;  
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.2);
+}
+
+.avatar-mood {
+    width: 35px;
+    height: 35px;
+    /* background-color: red; */
+    position: relative;
+    bottom: 23px;
+    right: -65px;
+}
+
+.status{
+    display: inline-block;
+    width:8px;
+    height:8px;
+    background:green;
+    border-radius: 50%;
+}
+
+.user-aside{
+    width: 400px;
+    height:100px;
+    /* background-color:red; */
+    color:white;
+    margin-top: 20px;
+}
+
+.user-name-id{
+    font-size: 15px;
+}
+
+.user-name{
+    font-size:25px;
+}
+
+.status-menu{
+    margin-top: -30px;;
+}
+
+.profile-desktop {
+    height: 25px;
+    width: 300px;
+}
+
+.profile-desktop .col{
+    border-right: 1px solid dimgray;
+}
+
+.profile-desktop .col:nth-child(3){
+    border: none;
+}
+
+.profile-desktop-section-1{
+    text-align: center;
+}
+
+[title='share your profile']{
+    margin:0px 30px 0px 5px;
+}
+
+
+.profile-posts{
+    height: 500px;
+}
+
+.profile-aside{
+    height: 500px;
+    /* background: yellow; */
+}
+
+.profile-aside footer {
+    position: absolute;
+    bottom: 0px
+}
+
+.profile-stats{
+    color: white;
+    text-align: center;
+}
+
+.profile-stats:nth-child(1), .profile-stats:nth-child(2) {
+    border-right: 2px solid rgba(0,0,0,0.1);
+}
