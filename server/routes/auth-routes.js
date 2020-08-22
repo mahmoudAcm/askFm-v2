@@ -1,28 +1,11 @@
 const router = require("express").Router();
 const passport = require("passport");
 const User = require("../models/user/userModel");
-const validator = require("validator").default;
 
 router.post('/register', async (req, res) => {
    try {
-
-       const { email } = req.body ;
-
-       let userTagName = "", fullName = "";
-
-       fullName = email.split("@")[0];
-
-       for(let name of fullName){
-           if(validator.isAlphanumeric(name)) userTagName += name;
-       }
-
-       const user = new User({
-           email,
-           userTagName,
-           fullName
-       });
-
-       await user.save();
+       const { email, password } = req.body ;
+       const user = await User.register(email, password);
 
        res.send({user});
    } catch (err) {
@@ -31,7 +14,7 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', passport.authenticate('local', { failureRedirect: '/error' }), (req, res) => {
-    res.send('hi');
+    res.send({message:'hi'});
 });
 
 router.get('/logout', (req, res) => {
