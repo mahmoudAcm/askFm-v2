@@ -1,10 +1,9 @@
 const router = require('express').Router();
 const Ask = require('../models/ask-post/askModel');
 
-router.post('/:id', async (req, res) => {
+router.post('/ask-post', async (req, res) => {
     try{
         const askPost = new Ask({
-            userId: req.params.id,
             ...req.body
         });
         
@@ -12,7 +11,7 @@ router.post('/:id', async (req, res) => {
 
         res.send({
             askPost,
-            message: "Question created successfuly"
+            message: "Question created successfully"
         });
 
     } catch(err){
@@ -36,9 +35,9 @@ router.delete('/:id', async (req, res) => {
 });
 
 //get all posts of user :id
-router.get('/:id', async (req, res) => {
+router.get('/askPosts/:id', async (req, res) => {
     try{
-        const posts = await Ask.find({userId: req.params.id});
+        const posts = await Ask.find({author: req.params.id});
         res.send({
             posts,
             message: "all posts are here"

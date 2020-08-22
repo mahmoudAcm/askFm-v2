@@ -39,6 +39,10 @@ UserSchema.statics.updateUser = async function (userId, updatedData){
   return await profileData.save();
 }
 
+UserSchema.methods.verifyPassword = function (password){
+  const user = this ;
+  return user._doc.password === password;
+}
 
 const User = mongoose.model('user', UserSchema);
 

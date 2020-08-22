@@ -8,10 +8,10 @@ const friendRoutes = require('./routes/friendRoutes');
 const askRoutes = require('./routes/askRoutes');
 
 const path = require('path');
-// const authRoute = require('./routes/auth-routes');
-// require('./config/passport-setup');
-// const cookieSession = require('cookie-session');
-// const passport = require('passport');
+const authRoute = require('./routes/auth-routes');
+const passport = require("passport");
+require('./config/passport-setup');
+const cookieSession = require('cookie-session');
 
 
 //connect to DB
@@ -29,16 +29,15 @@ mongoose.connect(keys.mongodb.DB_URL,{
 const app = express();
 const PORT = process.env.PORT || 3001 ;
 
-// app.use(cookieSession({
-//     maxAge: 24 * 60 * 60 * 1000,
-//     keys:['testmeforever']  
-// }));
+app.use(cookieSession({
+    maxAge: 24 * 60 * 60 * 1000,
+    keys:['testmeforever']
+}));
 
-// //initialize passport
-// app.use(passport.initialize());
-// app.use(passport.session());
 
-// app.use('/auth', authRoute);
+//initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.json());
 
@@ -48,24 +47,15 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/User', userRoutes);
+app.use(authRoute);
 app.use('/Interest', interestRoutes);
 app.use('/Follower', followerRoutes);
 app.use('/Friend', friendRoutes);
-app.use('/askPost', askRoutes);
+app.use('/User', userRoutes);
+app.use(askRoutes);
 
-
-//for purpose of testing
-app.get('/', (req, res) => {
-    res.send({
-        profile: {
-            user:{
-
-            },
-            interests: [],
-            followers: []
-        }
-    });
+app.get('/error', (req, res) => {
+    res.send('something went wrong!');
 });
 
 app.listen(PORT, () => {

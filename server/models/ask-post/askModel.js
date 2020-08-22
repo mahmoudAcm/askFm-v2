@@ -3,17 +3,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const askSchema = new Schema({
-    userId: {
+    author: {
         type: mongoose.Types.ObjectId
     },
-    content: {
-        type: String,
-        required: true
+    text: {
+        type: String
     }
 }, {
     timestamps: true
 });
 
-const Ask = mongoose.model('Ask', askSchema);
+const Ask = mongoose.model('AskPost', askSchema);
 
 module.exports = Ask ;

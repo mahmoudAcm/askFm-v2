@@ -1,23 +1,14 @@
 const router = require('express').Router();
 const User = require('../models/user/userModel');
 
-/*Creating user*/
-router.post('/', async (req, res) => {
-    try{
-        const user = new User({...req.body});
-        await user.save();
-        res.status(201).send({
-            Profile: await User.getProfile(user._id),
-            message: 'User created successfully'
-        });
-    } catch(err){
-        res.send({
-            message: err
-        });
-    }
-});
+const auth = (req, res, next) => {
+    if(!req.isAuthenticated()) {
+        return res.redirect("/error");
+    } else
+        next();
+};
 
-router.delete('/:userId', async (req, res) => {
+router.delete('/:userId', auth, async (req, res) => {
     const message = await User.deleteProfile(req.params.userId);
     res.send({
         message:'User has been deleted'
